@@ -1,18 +1,19 @@
-package xoandt.testcase;
+package Bai6LearnWebElement;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static java.nio.file.Paths.get;
+
 public class Login {
     public static void main(String[] args) throws InterruptedException {
+        get("https://hrm.anhtester.com");
         System.out.println("Hello");
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://hrm.anhtester.com");
-
         Thread.sleep(1000);
 
         //Tìm element bằng thuộc tính
