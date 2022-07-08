@@ -8,11 +8,14 @@ import org.testng.annotations.*;
 import java.time.Duration;
 
 public class BaseTest {
+
     public static WebDriver driver;
-@BeforeSuite
-public void setupAutomation(){
-    System.out.println("Load file config");
-}
+
+    @BeforeSuite
+    public void setupAutomation(){
+        System.out.println("Load file config");
+    }
+
     @BeforeClass
     public static void createDriver() {
         WebDriverManager.chromedriver().setup();
@@ -23,19 +26,21 @@ public void setupAutomation(){
     }
 
     @AfterClass
-
     public static void closeDriver() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        if (driver != null) {
+
+        if(driver != null) {
             driver.quit();
         }
     }
-@AfterSuite
+
+    @AfterSuite
     public void closeAutomation(){
-    System.out.println("Close Autonmation test");
-}
+        System.out.println("Close Automation test");
+    }
+
 }

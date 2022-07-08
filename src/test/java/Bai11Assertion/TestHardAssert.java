@@ -12,7 +12,7 @@ public class TestHardAssert extends BaseTest {
 
         driver.get("https://anhtester.com");
 
-        String expectedTitle = "Anh Tester - Automation Testing";
+        String expectedTitle = "Anh Tester Automation Testing";
         String actualTitle = driver.getTitle();
 
         System.out.println("*** Checking For The Title ***");
